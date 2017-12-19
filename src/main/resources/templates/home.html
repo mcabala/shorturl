@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+	<div align="center">
+		<h1>Short URL Creation</h1>
+
+
+		<form th:action="@{/}" th:object="${shortenUrlRequest}" method="POST">
+
+			<p>
+				<input type="text" name="url" placeholder="http://www.google.com" />
+			</p>
+
+			<p>
+				<button type="submit">Create Short URL</button>
+			</p>
+		</form>
+		<br />
+		<div th:if="${shorturl}"
+			th:utext="'Short Link created: &lt;a href=\'' + ${shorturl} + '\'&gt;' + ${shorturl} + '&lt;/a&gt;'">
+		</div>
+	</div>
+</body>
+</html>
